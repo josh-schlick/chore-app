@@ -10,10 +10,13 @@ Install bower: `sudo npm install -g bower`
 
 Install the bower components: `bower install`
 
+App Engine for Go: [Instructions](https://cloud.google.com/appengine/docs/go/gettingstarted/devenvironment)
+
 Building
 ------
 `jsx --watch src/ build/`
 
-Running
+Running Locally
 -------
-`python -m SimpleHTTPServer`
+`goapp serve`
+visit `localhost:8080`

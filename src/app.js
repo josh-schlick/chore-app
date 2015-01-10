@@ -119,6 +119,11 @@ function(
 
 	var AdultTab = React.createClass({
 		getInitialState: function() {
+			$.ajax({
+				url: '/list',
+				type: 'GET',
+				success: function(response) {console.log(response)}
+			})
 			return {chores: [
 				{'name': 'take medicine', 'points': 1},
 				{'name': 'show parent all school stuff', 'points': 1},
