@@ -31,12 +31,20 @@ function(
 	Panel,
 	Badge
 ) {
+	React.initializeTouchEvents(true)
+
 	var AddChore = React.createClass({
 		addChore: function() {
-			var chore = {'name': this.refs.name.getValue(), 'points': this.refs.points.getValue()};
+			var chore = {'name': this.refs.name.getValue(), 'points': parseInt(this.refs.points.getValue(), 10)};
 			this.props.onChoreSubmit(chore);
 			this.refs.name.getInputDOMNode().value = '';
 			this.refs.points.getInputDOMNode().value = '';
+			$.ajax({
+				url: '/chore',
+				type: 'POST',
+				data: chore,
+				success: console.log('added!')
+			});
 		},
 		render: function() {
 			return (
@@ -118,18 +126,19 @@ function(
 
 
 	var AdultTab = React.createClass({
+
+		x: function(response) {
+			console.log(JSON.parse(response));
+			this.setState({chores: JSON.parse(response)});
+		},
+
 		getInitialState: function() {
 			$.ajax({
 				url: '/list',
 				type: 'GET',
-				success: function(response) {console.log(response)}
-			})
-			return {chores: [
-				{'name': 'take medicine', 'points': 1},
-				{'name': 'show parent all school stuff', 'points': 1},
-				{'name': 'read a book', 'points': 2},
-				{'name': 'clean room', 'points': 5}
-			]};
+				success: this.x
+			});
+			return {chores: []};
 		},
 
 		handleChoreSubmit: function(chore) {
@@ -144,8 +153,6 @@ function(
 					<AddChore onChoreSubmit={this.handleChoreSubmit}/>
 					<p />
 					<ChoreList title='Active Chores' chores={this.state.chores}/>
-					<p />
-					<ChoreList title='Done Chores' chores={this.state.chores}/>
 					<p />
 					<PointsPanel/>
 				</div>
