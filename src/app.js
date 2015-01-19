@@ -17,7 +17,10 @@ require([
 	'react-bootstrap/ListGroupItem',
 	'react-bootstrap/ListGroup',
 	'react-bootstrap/Panel',
-	'react-bootstrap/Badge'
+	'react-bootstrap/Badge',
+	'react-bootstrap/SplitButton',
+	'react-bootstrap/MenuItem',
+	'react-bootstrap/Glyphicon'
 ],
 function(
 	React,
@@ -29,7 +32,10 @@ function(
 	ListGroupItem,
 	ListGroup,
 	Panel,
-	Badge
+	Badge,
+	SplitButton,
+	MenuItem,
+	Glyphicon
 ) {
 	React.initializeTouchEvents(true)
 
@@ -63,35 +69,38 @@ function(
 
 
 	var Chore = React.createClass({
-		styles: ['info', 'success', 'danger'],
-
 		getInitialState: function() {
-			return {counter: 0};
+			return {choreColor: 'info'};
 		},
 
-		choreClicked: function() {
-			var counter = this.state.counter;
-			counter++;
-			counter = counter % 3;
-			this.setState({counter: counter});
+		done: function() {
+			this.setState({choreColor: 'success'});
 		},
 
-		getStyle: function() {
-			return this.styles[this.state.counter];
-		},
-
-		getInitialState: function() {
-			return {counter: 0};
+		skip: function() {
+			this.setState({choreColor: 'danger'});
 		},
 
 		render: function() {
 			return (
 				<ListGroupItem
 					onClick={this.choreClicked}
-					bsStyle={this.getStyle()}
+					bsStyle={this.state.choreColor}
 					className='no-selection'>
 						<strong>{this.props.chore.name}</strong>
 						<span> {this.props.chore.points} pts</span>
+						<Button
+						  onClick={this.skip}
+						  bsStyle='danger'
+						  className='chore-button'>
+							<Glyphicon glyph='remove' />
+						</Button>
+						<Button
+						  onClick={this.done}
+						  bsStyle='success'
+						  className='chore-button'>
+							<Glyphicon glyph='ok' />
+						</Button>
 				</ListGroupItem>
 			);
 		}

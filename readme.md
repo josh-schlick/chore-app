@@ -16,7 +16,18 @@ Building
 ------
 `jsx --watch src/ build/`
 
+(add these to build process later)
+go fmt app.go
+
 Running Locally
 -------
-`goapp serve`
-visit `localhost:8080`
+`goapp serve` and visit `localhost:8080`
+
+or
+
+`goapp serve -host 0.0.0.0` if connecting from another device
+
+
+Deploying Remotely
+------
+`goapp deploy`

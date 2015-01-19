@@ -17,8 +17,7 @@
 	font-size: 20px;
 }
 
-/*@media (max-width: 1024px) {
-  body {
-    font-size: 30px;
-  }*/
+.chore-button {
+  float: right;
+  margin: -7px 1px;
 }
