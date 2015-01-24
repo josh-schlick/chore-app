@@ -4,13 +4,15 @@ define([
 	'components/Chore',
 	'react',
 	'react-bootstrap/ListGroup',
-	'react-bootstrap/Panel'
+	'react-bootstrap/Panel',
+	'stores/ChoreStore'
 ],
 function(
 	Chore,
 	React,
 	ListGroup,
-	Panel
+	Panel,
+	ChoreStore
 ) {
 
 	var ChoreList = React.createClass({

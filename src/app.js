@@ -2,9 +2,14 @@
 
 require.config({
 	paths: {
+		'actions': './actions',
+		'AppDispatcher': 'dispatcher/AppDispatcher',
 		'components': './components',
+		'constants': './constants',
+		'flux': '../bower_components/flux/dist/Flux',
 		'react': '../bower_components/react/react',
-		'react-bootstrap': '../bower_components/react-bootstrap'
+		'react-bootstrap': '../bower_components/react-bootstrap',
+		'stores': './stores'
 	}
 });
 
