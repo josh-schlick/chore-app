@@ -1,5 +1,1 @@
-define([], function() {
-	return {
-		CREATE: 'CREATE'
-	}
-});
+export const CREATE = 'CREATE';

@@ -1,7 +1,7 @@
 /** @jsx React.DOM */
 
 import $ from 'jquery';
-import React from'react';
+import React from 'react';
 import TabbedArea from 'react-bootstrap/TabbedArea';
 import TabPane from 'react-bootstrap/TabPane';
 import UserTab from 'components/UserTab';

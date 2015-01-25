@@ -1,10 +1,3 @@
-define([
-	'flux'
-], function(
-	Flux
-) {
-	var Dispatcher = Flux.Dispatcher;
-	console.log('hello');
+import { Dispatcher } from 'flux';
 
-	return new Dispatcher();
-});
+export default new Dispatcher();
