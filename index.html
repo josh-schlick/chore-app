@@ -7,9 +7,15 @@
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-	<script data-main="build/app.js" src="bower_components/requirejs/require.js"></script>
-	<!--[if lt IE 9]>
+ 	<script src="jspm_packages/traceur-runtime.js"></script>
+    <script src="jspm_packages/es6-module-loader.js"></script>
+	<script src="jspm_packages/system.js"></script>
+	<script src="config.js"></script>
+	<script>
+		System.baseURL = '/';
+		System.import('build/app');
+	</script>
+  	<!--[if lt IE 9]>
     	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	    <script src="http://cdnjs.cloudflare.com/ajax/libs/es5-shim/3.4.0/es5-shim.js"></script>
 	    <script src="http://cdnjs.cloudflare.com/ajax/libs/es5-shim/3.4.0/es5-sham.js"></script>

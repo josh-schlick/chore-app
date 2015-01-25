@@ -1,5 +1,5 @@
 define([
-	'AppDispatcher',
+	'dispatcher/AppDispatcher',
 	'constants/ChoreConstants'
 ],
 function(

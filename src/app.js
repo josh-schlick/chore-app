@@ -1,34 +1,15 @@
 /** @jsx React.DOM */
 
-require.config({
-	paths: {
-		'actions': './actions',
-		'AppDispatcher': 'dispatcher/AppDispatcher',
-		'components': './components',
-		'constants': './constants',
-		'flux': '../bower_components/flux/dist/Flux',
-		'react': '../bower_components/react/react',
-		'react-bootstrap': '../bower_components/react-bootstrap',
-		'stores': './stores'
-	}
-});
+import $ from 'jquery';
+import React from'react';
+import TabbedArea from 'react-bootstrap/TabbedArea';
+import TabPane from 'react-bootstrap/TabPane';
+import UserTab from 'components/UserTab';
 
-require([
-	'components/UserTab',
-	'react',
-	'react-bootstrap/TabbedArea',
-	'react-bootstrap/TabPane'
 
-],
-function(
-	UserTab,
-	React,
-	TabbedArea,
-	TabPane
-) {
-	React.initializeTouchEvents(true);
+React.initializeTouchEvents(true);
 
-	var mountNode = document.getElementById('content');
+var mountNode = document.getElementById('content');
 
 	var tabbedAreaInstance = (
 	    <TabbedArea defaultActiveKey={1}>
@@ -38,6 +19,4 @@ function(
 	    </TabbedArea>
 	  );
 
-	React.render(tabbedAreaInstance, mountNode);
-
-});
+React.render(tabbedAreaInstance, mountNode);
