@@ -1,10 +1,10 @@
 /** @jsx React.DOM */
 
-var $ = require('jquery');
-var React = require('react');
-var TabbedArea = require('react-bootstrap/TabbedArea');
-var TabPane = require('react-bootstrap/TabPane');
-var UserTab = require('components/UserTab');
+import $ from 'jquery';
+import React from'react';
+import TabbedArea from 'react-bootstrap/TabbedArea';
+import TabPane from 'react-bootstrap/TabPane';
+import UserTab from 'components/UserTab';
 
 
 React.initializeTouchEvents(true);
