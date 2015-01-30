@@ -17,6 +17,7 @@ System.config({
     "events": "github:jspm/nodelibs-events@0.1.0",
     "flux": "npm:flux@2.0.1",
     "jquery": "github:components/jquery@2.1.3",
+    "object-assign": "npm:object-assign@2.0.0",
     "react": "npm:react@0.12.2",
     "react-bootstrap": "npm:react-bootstrap@0.13.3",
     "github:jspm/nodelibs-buffer@0.1.0": {

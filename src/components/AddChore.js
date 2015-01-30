@@ -9,7 +9,6 @@ import React from 'react';
 var AddChore = React.createClass({
 	addChore: function() {
 		var chore = {'name': this.refs.name.getValue(), 'points': parseInt(this.refs.points.getValue(), 10)};
-		// this.props.onChoreSubmit(chore);
 		ChoreActions.create(chore);
 		this.refs.name.getInputDOMNode().value = '';
 		this.refs.points.getInputDOMNode().value = '';
